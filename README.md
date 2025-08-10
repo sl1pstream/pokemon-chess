@@ -4,6 +4,9 @@ An AI-made chess game with Pokemon-themed pieces and sprites. **All code has bee
 
 **This game requires an internet connection to connect to Pokemon API.**
 
+<img width="1255" height="682" alt="image" src="https://github.com/user-attachments/assets/e60f27f5-e70e-4e61-bd36-c970470a6d8a" />
+
+
 ## Features
 
 - Complete chess rules implementation
