@@ -18,10 +18,4 @@ An AI-made chess game with Pokemon-themed pieces and sprites. **All code has bee
 
 ## Usage
 
-Open `pokemon_chess.html` in a web browser to play.
-
-## Controls
-
-- Click pieces to select and move
-- Use Prev/Next buttons to review moves
-- Export/Import PGN files for game sharing
+Open `pokemon_chess.html` in a web browser to play
