@@ -95,6 +95,11 @@
             padding: 15px;
             border-radius: 10px;
             max-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        .moves-content {
+            flex: 1;
             overflow-y: auto;
         }
         .moves-table h3 {
@@ -276,7 +281,10 @@
                     <button class="nav-btn" onclick="exportPGN()">Export PGN</button>
                     <button class="nav-btn" onclick="importPGN()">Import PGN</button>
                 </div>
-                <div id="moveHistory"></div>
+                <div class="move-header"><div class="move-number">#</div><div class="move">White</div><div class="move">Black</div></div>
+                <div class="moves-content">
+                    <div id="moveHistory"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -896,7 +904,6 @@
 
         function updateMoveHistory() {
             const historyDiv = document.getElementById('moveHistory');
-            const header = '<div class="move-header"><div class="move-number">#</div><div class="move">White</div><div class="move">Black</div></div>';
             const rows = Array.from({length: Math.ceil(gameHistory.length / 2)}, (_, i) => {
                 const moveNum = i + 1;
                 const whiteMove = formatMove(gameHistory[i * 2]);
@@ -906,7 +913,7 @@
                 return `<div class="move-row"><div class="move-number">${moveNum}.</div><div class="move${whiteSelected}" data-move-index="${i * 2}" onclick="goToMove(${i * 2})">${whiteMove}</div><div class="move${blackSelected}" data-move-index="${i * 2 + 1}" onclick="goToMove(${i * 2 + 1})">${blackMove}</div></div>`;
             }).join('');
             
-            historyDiv.innerHTML = header + rows;
+            historyDiv.innerHTML = rows;
             document.getElementById('prevBtn').disabled = currentMoveIndex <= -1;
             document.getElementById('nextBtn').disabled = currentMoveIndex >= gameHistory.length - 1;
         }
